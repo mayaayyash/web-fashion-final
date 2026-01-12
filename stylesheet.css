@@ -1,0 +1,243 @@
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+ font-family: Arial, Helvetica, sans-serif;
+ background-color: #111;
+ color: #f5f5f5;
+ line-height: 1.6;
+ padding: 1.25rem;
+}
+
+header {
+ text-align: center;
+ margin-bottom: 1.25rem;
+}
+
+h1 {
+ font-size: 2.5rem;
+ margin-bottom: 0.25rem;
+}
+
+.subhead {
+ font-size: 1rem;
+ color: #d1d1d1;
+}
+
+/* Hamburger toggle */
+#menu-toggle {
+ display: none;
+}
+
+.menu-button {
+ display: none;
+ font-size: 2rem;
+ cursor: pointer;
+ margin-top: 0.75rem;
+}
+
+/* Navigation */
+nav {
+ margin-top: 1rem;
+ display: flex;
+ justify-content: center;
+ gap: 1.25rem;
+ flex-wrap: wrap;
+}
+
+nav a {
+ text-decoration: none;
+ color: #f5f5f5;
+ font-weight: bold;
+}
+
+nav a:hover {
+ color: #ffb3c6;
+}
+
+/* Mobile nav */
+@media (max-width: 700px) {
+ .menu-button {
+ display: inline-block;
+}
+
+ nav {
+ display: none;
+ flex-direction: column;
+ align-items: center;
+ gap: 0.75rem;
+ margin-top: 1rem;
+}
+
+ #menu-toggle:checked + .menu-button + nav {
+  display: flex;
+}
+}
+
+/* Section and Boxes */
+section {
+ background-color: #222;
+ padding: 1.25rem;
+ border-radius: 10px;
+ margin-bottom: 1.5rem;
+}
+
+section h2 {
+ margin-bottom: 0.75rem;
+ font-size: 1.5rem;
+}
+
+section h3 {
+ margin-bottom: 0.5rem;
+}
+
+/* Images */
+img {
+ width: 100%;
+ height: auto;
+ border-radius: 8px;
+ display: block;
+}
+
+/* Simple hover animation */
+img:hover {
+ transform: scale(1.02);
+ transition: transform 0.2s ease;
+}
+
+/* Links inside sections */
+section a {
+ color: #ffb3c6;
+ font-weight: bold;
+}
+
+/* Product Layout */
+.product-card {
+ max-width: 360px;
+ margin: 0 auto 1.5rem auto;
+ text-align: center;
+}
+
+.price {
+ color: #ffb3c6;
+ font-weight: bold;
+ margin-top: 0.75rem;
+ font-size: 1.1rem;
+}
+
+.description {
+ color: #d1d1d1;
+ font-size: 0.95rem;
+ margin-top: 0.5rem;
+}
+
+.carousel-container {
+ position: relative;
+ overflow: hidden;
+ max-width: 320px;    
+ margin: 0.75rem auto; 
+}
+
+/* Radio Buttons */
+.carousel-container input[type="radio"] {
+ display: none;
+}
+
+/* Slides row */
+.carousel-container .slides {
+ display: flex;                 
+ width: 400%;                   
+ transition: transform 0.5s ease;
+}
+
+.carousel-container .slide {
+ width: 100%;
+ flex-shrink: 0;
+}
+
+/* Navigation dots */
+.carousel-container .navigation {
+ display: flex;
+ justify-content: center;
+ gap: 0.5rem;
+ margin-top: 0.5rem;
+}
+
+.carousel-container .dot {
+ width: 10px;
+ height: 10px;
+ background-color: #777;
+ border-radius: 50%;
+ cursor: pointer;
+}
+
+/* Jacket Carousel */
+#jacket1:checked ~ .slides { transform: translateX(0); }
+#jacket2:checked ~ .slides { transform: translateX(-100%); }
+#jacket3:checked ~ .slides { transform: translateX(-200%); }
+#jacket4:checked ~ .slides { transform: translateX(-300%); }
+
+#jacket1:checked ~ .navigation label[for="jacket1"],
+#jacket2:checked ~ .navigation label[for="jacket2"],
+#jacket3:checked ~ .navigation label[for="jacket3"],
+#jacket4:checked ~ .navigation label[for="jacket4"] {
+background-color: #ffb3c6;
+}
+
+/* Skirt Carousel */
+#skirt1:checked ~ .slides { transform: translateX(0); }
+#skirt2:checked ~ .slides { transform: translateX(-100%); }
+#skirt3:checked ~ .slides { transform: translateX(-200%); }
+#skirt4:checked ~ .slides { transform: translateX(-300%); }
+
+#skirt1:checked ~ .navigation label[for="skirt1"],
+#skirt2:checked ~ .navigation label[for="skirt2"],
+#skirt3:checked ~ .navigation label[for="skirt3"],
+#skirt4:checked ~ .navigation label[for="skirt4"] {
+background-color: #ffb3c6;
+}
+
+/* Video */
+.hero-video video {
+width: 100%;
+max-width: 900px;
+margin: 0 auto;
+display: block;
+border-radius: 10px;
+}
+
+/* Lookbook */
+ .carousel .slides {
+ display: flex;
+ gap: 1rem;
+ flex-wrap: wrap;              
+ justify-content: center;
+}   
+
+/* Carousel slides layout FIX */
+.carousel-container .slides {
+  display: flex;
+  width: 400%;
+  height: 320px;             
+}
+
+.carousel-container .slide {
+  width: 25%;                
+  flex-shrink: 0;
+}
+
+.carousel-container .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;       
+  display: block;}
+
+/* Footer */
+footer {
+ text-align: center;
+ margin-top: 2rem;
+ color: #bbb;
+}
